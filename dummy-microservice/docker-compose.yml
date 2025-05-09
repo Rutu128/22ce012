@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./api-gateway
+    ports:
+      - "5000:5000"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend-worker
+    ports:
+      - "5001:5001"
